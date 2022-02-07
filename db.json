@@ -1,0 +1,52 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "nom": "ordinateureee",
+      "quantite": "7044",
+      "prix": 70000
+    },
+    {
+      "id": 2,
+      "nom": "portable",
+      "prix": 50000,
+      "quantite": 80
+    },
+    {
+      "id": 3,
+      "nom": "processeurs",
+      "prix": 70000,
+      "quantite": 40
+    },
+    {
+      "id": 4,
+      "nom": "processeurs",
+      "prix": 70000,
+      "quantite": 40
+    },
+    {
+      "nom": "ddd",
+      "prix": "700",
+      "quantite": "41",
+      "id": 8
+    },
+    {
+      "nom": "fy",
+      "prix": "45",
+      "quantite": "45",
+      "id": 9
+    },
+    {
+      "nom": "cxvxvxvxvx",
+      "prix": "04546545",
+      "quantite": "13131",
+      "id": 10
+    },
+    {
+      "nom": "ff",
+      "prix": 0,
+      "quantite": "75",
+      "id": 11
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+<div class="container" *ngIf="ProductformGroup">
+   
+   <form [formGroup]="ProductformGroup">
+       <div class="form-group">
+           <label>nom:</label>
+           <input type="text" formControlName="nom" class="form-control">
+       </div>
+        <div class="form-group">
+            <label>quantité:</label>
+            <input type="text"  formControlName="quantite" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>prix:</label>
+            <input type="text" formControlName="prix" class="form-control">
+        </div>
+        <button class="btn btn-success" (click)=onSaveProduct()>sauvegarder</button>
+   </form> 
+</div>
