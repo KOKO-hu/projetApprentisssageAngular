@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { catchError, map, Observable, of, startWith } from 'rxjs';
 import { ProductModule } from '../models/product/product.module';
 import { ProductService } from '../services/product.service';
-import { AppDataState, DataStateEnum } from '../state/state';
+import { ActionEvent, AppDataState, DataStateEnum, ProductActionsTypes } from '../state/state';
 
 @Component({
   selector: 'app-product',
@@ -63,5 +63,17 @@ export class ProductComponent implements OnInit {
   }
   onEdit(p: ProductModule) {
     this.router.navigateByUrl("/updateproduct/"+p.id)
+  }
+/* une fonction de product nav-bar */
+  onActionEvent($event: ActionEvent) {
+    switch ($event.type) {
+      case ProductActionsTypes.GET_ALL_PRODUCTS: this.onGetAllProducts(); break
+      case ProductActionsTypes.GET_SELECTED_PRODUCTS: this.getSelectProducts(); break
+      case ProductActionsTypes.SEARCH_PRODUCTS: this.onSearch($event.payload); break  
+      case ProductActionsTypes.EDIT_PRODUCT: this.onEdit($event.payload); break
+      case ProductActionsTypes.DELECT_PRODUCT: this.deleteProduit($event.payload); break 
+      case ProductActionsTypes.NEW_PRODUCT: this.onNewProducts(); break     
+     
+}
   }
 }

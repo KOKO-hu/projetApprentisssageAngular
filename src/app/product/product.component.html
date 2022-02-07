@@ -1,64 +1,6 @@
 <div class="container">
-<nav class="navbar navbar-expand-sm bg-light navbar-light my-3">
-    <ul class="navbar navbar-nav">
-        <li>
-            <button (click)="onGetAllProducts()" class="btn-outline-info mx-2">all</button>
-        </li>
-        <li>
-            <button (click)="getSelectProducts()" class="btn-outline-info mx-2">selected</button>
-        </li>
-        <li>
-            <button class="btn-outline-danger mx-2">available</button>
-        </li>
-        <li>
-            <button (click)="onNewProducts()" class="btn-outline-info mx-2">nouveau produit</button>
-        </li>
-    </ul>
-    <ul class="navbar navbar-nav ml-auto">
-       <li>
-           <form #f='ngForm' (ngSubmit)="onSearch(f.value)">
-               <div class="form-group">
-                   <label></label>
-                   <input ngModel name="keyword" class="form-control" type="text" >
-                   <button class="btn btn-outline-info">
-                       <span>search</span>
-                   </button>
-               </div>
-           </form>
-       </li>
-    </ul>
-
-</nav>
-</div>
-<ng-container *ngIf="products$ | async as result" [ngSwitch]="result.dataState">
-<ng-container *ngSwitchCase="DataStateEnum.LOADING">
-<div class="text-center">LOADING....</div>
-</ng-container>
-<ng-container *ngSwitchCase="DataStateEnum.ERROR">
-   <div class="alert-danger">
-    {{result.errorMessage}}   
-   </div>
-</ng-container>
-<ng-container *ngSwitchCase="DataStateEnum.LOADED">
-<table class="table">
-    <tr>
-        <th>ID</th>
-        <th>nom</th>
-        <th>prix</th>
-        <th>quantité</th>
-    </tr>
-    <tr *ngFor="let p of result.data">
-        <td>{{p.id}}</td>
-        <td>{{p.nom}}</td>
-        <td>{{p.prix}}</td>
-        <td>{{p.quantite}}</td>
-        <td><button class="btn btn-danger" (click)="deleteProduit(p)">supprimer</button></td>
-        <td><button class="btn btn-danger" (click)="onEdit(p)">editer</button></td>
-    </tr>
-</table>
-</ng-container>
-
-</ng-container>
-<div class="container" *ngIf="products$">
+<app-products-nav-bar (eventEmitter)="onActionEvent($event)"></app-products-nav-bar>
+<app-products-list [products$]="products$" (productsEventEmitter)="onActionEvent($event)"></app-products-list>
 
 </div>
+

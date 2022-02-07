@@ -1,0 +1,8 @@
+<tr *ngIf="product">
+    <td>{{product.id}}</td>
+    <td>{{product.nom}}</td>
+    <td>{{product.prix}}</td>
+    <td>{{product.quantite}}</td>
+    <td><button class="btn btn-danger" (click)="deleteProduit(product)">supprimer</button></td>
+    <td><button class="btn btn-danger" (click)="onEdit(product)">editer</button></td>
+</tr>

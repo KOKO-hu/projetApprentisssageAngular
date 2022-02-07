@@ -3,8 +3,8 @@
     {
       "id": 1,
       "nom": "ordinateureee",
-      "quantite": "7044",
-      "prix": 70000
+      "quantite": "70445889999999",
+      "prix": "700008989966788"
     },
     {
       "id": 2,
@@ -47,6 +47,24 @@
       "prix": 0,
       "quantite": "75",
       "id": 11
+    },
+    {
+      "nom": "s",
+      "prix": "71",
+      "quantite": "45",
+      "id": 12
+    },
+    {
+      "nom": "KKK",
+      "prix": "78",
+      "quantite": "45",
+      "id": 13
+    },
+    {
+      "nom": "io",
+      "prix": "0777777777777777777",
+      "quantite": "888888",
+      "id": 14
     }
   ]
 }
